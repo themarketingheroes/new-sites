@@ -35,7 +35,7 @@
 <section class="page-header with-bg" style="background-image: url('/img/job-619.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Reviews</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">What clients<br><span style="color: var(--accent);">actually say.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">What clients<br><span style="color: var(--accent);">actually say.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">Most reviews here come from general contractors, developers, and homeowners we have worked with more than once.</p>
   </div>
 </section>
@@ -116,7 +116,7 @@
     </div>
 
     <div style="text-align: center; margin-top: 80px; padding: 48px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px;">
-      <h3 style="font-family: 'Space Grotesk'; font-size: 28px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.02em;">Worked with us recently?</h3>
+      <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.02em;">Worked with us recently?</h3>
       <p style="color: var(--muted); margin-bottom: 24px;">Leave a Google review. It helps the next homeowner find a real demolition crew.</p>
       <a href="https://g.page/r/" target="_blank" rel="noopener" class="btn-primary">Leave a Google review <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
@@ -258,7 +258,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Quote form: client-side validation + inline success (Formspree-compatible)
-const qf = document.getElementById('quote-form');
+const qf = document.getElementById('quote-form') || document.getElementById('quote-form-contact');
 if (qf) {
   qf.addEventListener('submit', async (e) => {
     e.preventDefault();

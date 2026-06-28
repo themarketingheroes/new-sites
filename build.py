@@ -104,7 +104,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Quote form: client-side validation + inline success (Formspree-compatible)
-const qf = document.getElementById('quote-form');
+const qf = document.getElementById('quote-form') || document.getElementById('quote-form-contact');
 if (qf) {
   qf.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -494,7 +494,7 @@ page("index.html",
 about_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-625.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>About</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Breaking barriers.<br><span style="color: var(--accent);">Building futures.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Breaking barriers.<br><span style="color: var(--accent);">Building futures.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 620px; margin-top: 24px; line-height: 1.6;">A woman-owned demolition company built in South Florida, carrying forward a legacy of safe, efficient, and environmentally responsible work.</p>
   </div>
 </section>
@@ -579,7 +579,7 @@ page("about.html",
 services_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-630.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Services</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Every demolition need.<br><span style="color: var(--accent);">One in-house crew.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Every demolition need.<br><span style="color: var(--accent);">One in-house crew.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">From a single interior tear-out to a full commercial structure, the same five-step playbook applies. Permit to push, every job.</p>
   </div>
 </section>
@@ -698,7 +698,7 @@ def service_page(filename, page_title, hero_h1, hero_h1_accent, hero_sub,
     body = f'''<section class="page-header with-bg" style="background-image: url('{hero_bg}');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><a href="/services.html">Services</a><span class="sep">/</span><span>{page_title}</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">{hero_h1}<br><span style="color: var(--accent);">{hero_h1_accent}</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">{hero_h1}<br><span style="color: var(--accent);">{hero_h1_accent}</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">{hero_sub}</p>
     <div style="margin-top: 32px;"><a href="/contact.html" class="btn-primary">Free On-Site Quote {ARROW}</a></div>
   </div>
@@ -930,7 +930,7 @@ service_page(
 portfolio_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-636.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Portfolio</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Selected work<br><span style="color: var(--accent);">across South Florida.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Selected work<br><span style="color: var(--accent);">across South Florida.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">A small sample of recent demolition, concrete, and site-preparation jobs. Most clients prefer privacy, so addresses are abbreviated.</p>
   </div>
 </section>
@@ -963,7 +963,7 @@ page("portfolio.html",
 reviews_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-619.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Reviews</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">What clients<br><span style="color: var(--accent);">actually say.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">What clients<br><span style="color: var(--accent);">actually say.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">Most reviews here come from general contractors, developers, and homeowners we have worked with more than once.</p>
   </div>
 </section>
@@ -1044,7 +1044,7 @@ reviews_body = '''<section class="page-header with-bg" style="background-image: 
     </div>
 
     <div style="text-align: center; margin-top: 80px; padding: 48px; background: var(--surface); border: 1px solid var(--line); border-radius: 24px;">
-      <h3 style="font-family: 'Space Grotesk'; font-size: 28px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.02em;">Worked with us recently?</h3>
+      <h3 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 28px; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.02em;">Worked with us recently?</h3>
       <p style="color: var(--muted); margin-bottom: 24px;">Leave a Google review. It helps the next homeowner find a real demolition crew.</p>
       <a href="https://g.page/r/" target="_blank" rel="noopener" class="btn-primary">Leave a Google review ''' + ARROW + '''</a>
     </div>
@@ -1063,7 +1063,7 @@ page("reviews.html",
 blog_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-621.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Blog</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Field notes from<br><span style="color: var(--accent);">South Florida demolition.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Field notes from<br><span style="color: var(--accent);">South Florida demolition.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">What we learn on site. What every homeowner and GC should know before they sign a demo contract.</p>
   </div>
 </section>
@@ -1094,7 +1094,7 @@ page("blog.html",
 contact_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-614.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Contact</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Tell us about the job.<br><span style="color: var(--accent);">We will come walk it.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Tell us about the job.<br><span style="color: var(--accent);">We will come walk it.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">Every quote is on-site, not over the phone. Same-day callback. Quote walk usually within 48 hours.</p>
   </div>
 </section>
@@ -1104,21 +1104,21 @@ contact_body = '''<section class="page-header with-bg" style="background-image: 
     <div class="cta-grid">
       <div class="reveal">
         <span class="section-eyebrow">Get In Touch</span>
-        <h2 style="font-family: 'Space Grotesk'; font-size: clamp(32px,4vw,48px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 32px;">Three ways to reach Nataliya.</h2>
+        <h2 style="font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(32px,4vw,48px); font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; margin-bottom: 32px;">Three ways to reach Nataliya.</h2>
 
         <div style="margin-bottom: 28px;">
           <div style="color: var(--muted); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">Phone (fastest)</div>
-          <a href="tel:9544446643" style="font-family: 'Space Grotesk'; font-size: 32px; font-weight: 600; color: var(--accent); letter-spacing: -0.02em;">954-444-6643</a>
+          <a href="tel:9544446643" style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; color: var(--accent); letter-spacing: -0.02em;">954-444-6643</a>
         </div>
 
         <div style="margin-bottom: 28px;">
           <div style="color: var(--muted); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">Email</div>
-          <a href="mailto:nataliya@floridademolitionexperts.com" style="font-family: 'Space Grotesk'; font-size: 18px; font-weight: 500; color: var(--text);">nataliya@floridademolitionexperts.com</a>
+          <a href="mailto:nataliya@floridademolitionexperts.com" style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 500; color: var(--text);">nataliya@floridademolitionexperts.com</a>
         </div>
 
         <div style="margin-bottom: 28px;">
           <div style="color: var(--muted); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px;">Office</div>
-          <div style="font-family: 'Space Grotesk'; font-size: 18px; font-weight: 500;">2505 NE 35 Dr<br>Fort Lauderdale, FL 33308</div>
+          <div style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 500;">2505 NE 35 Dr<br>Fort Lauderdale, FL 33308</div>
         </div>
 
         <div style="padding-top: 24px; border-top: 1px solid var(--line);">
@@ -1131,25 +1131,42 @@ contact_body = '''<section class="page-header with-bg" style="background-image: 
       <div class="cta-form-card reveal">
         <h3>Request your on-site quote</h3>
         <p class="sub">Same-day callback. Quote walk usually within 48 hours.</p>
-        <form onsubmit="event.preventDefault(); alert('Thanks. We will call you within one business day at the number provided.'); this.reset();">
-          <div class="form-field"><label for="name">Full name</label><input id="name" name="name" type="text" required placeholder="Your name" /></div>
-          <div class="form-field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required placeholder="Phone number" /></div>
-          <div class="form-field"><label for="email">Email (optional)</label><input id="email" name="email" type="email" placeholder="you@email.com" /></div>
-          <div class="form-field"><label for="address">Property address</label><input id="address" name="address" type="text" required placeholder="Street, city, ZIP" /></div>
-          <div class="form-field"><label for="type">Job type</label>
-            <select id="type" name="type">
-              <option>Residential demolition</option>
-              <option>Commercial demolition</option>
-              <option>Concrete removal</option>
-              <option>Site preparation / earthwork</option>
-              <option>Pool removal</option>
-              <option>Permits only</option>
-              <option>Emergency / disaster response</option>
-              <option>Not sure yet</option>
-            </select>
+        <div class="form-reassure">
+          <div class="form-reassure-title">What happens next</div>
+          <ul class="form-reassure-list">
+            <li>We call you within one business day at the number provided</li>
+            <li>We schedule a 30-minute on-site walk (you do not need to be home)</li>
+            <li>You get a real fixed-price quote, in writing, within 48 hours</li>
+          </ul>
+        </div>
+        <form id="quote-form-contact" action="https://formspree.io/f/your-formspree-id" method="POST" novalidate>
+          <div class="form-grid">
+            <div class="form-field"><label for="c-name">Full name</label><input id="c-name" name="name" type="text" required minlength="2" placeholder="Your name" autocomplete="name" /><div class="err">Please enter your name.</div></div>
+            <div class="form-field"><label for="c-phone">Phone</label><input id="c-phone" name="phone" type="tel" required pattern="[0-9 ()+\-]{7,}" placeholder="(954) 555-0123" autocomplete="tel" /><div class="err">Please enter a valid phone number.</div></div>
+            <div class="form-field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" /><div class="err">Please enter a valid email address.</div></div>
+            <div class="form-field"><label for="c-address">Property address</label><input id="c-address" name="address" type="text" required placeholder="Street, city, ZIP" autocomplete="street-address" /><div class="err">Please enter the property address.</div></div>
+            <div class="form-field"><label for="c-type">Job type</label>
+              <select id="c-type" name="type" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Residential demolition</option>
+                <option>Commercial demolition</option>
+                <option>Concrete removal</option>
+                <option>Site preparation / earthwork</option>
+                <option>Pool removal</option>
+                <option>Permits only</option>
+                <option>Emergency / disaster response</option>
+                <option>Not sure yet</option>
+              </select>
+              <div class="err">Please pick a job type.</div>
+            </div>
+            <div class="form-field"><label for="c-notes">Notes (optional)</label><textarea id="c-notes" name="notes" placeholder="Anything we should know before the walk-through"></textarea></div>
+            <button type="submit" class="form-submit">Request my free quote</button>
           </div>
-          <div class="form-field"><label for="notes">Notes (optional)</label><textarea id="notes" name="notes" placeholder="Anything we should know before the walk-through"></textarea></div>
-          <button type="submit" class="form-submit">Request my free quote</button>
+          <div class="form-success" role="status" aria-live="polite">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+            <h4>Thanks. We have your request.</h4>
+            <p>We will call you within one business day. For urgent jobs, call us at <a href="tel:9544446643" style="color: var(--accent); font-weight: 600;">954-444-6643</a>.</p>
+          </div>
         </form>
       </div>
     </div>

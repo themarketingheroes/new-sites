@@ -35,7 +35,7 @@
 <section class="page-header with-bg" style="background-image: url('/img/job-636.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Portfolio</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Selected work<br><span style="color: var(--accent);">across South Florida.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Selected work<br><span style="color: var(--accent);">across South Florida.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">A small sample of recent demolition, concrete, and site-preparation jobs. Most clients prefer privacy, so addresses are abbreviated.</p>
   </div>
 </section>
@@ -191,7 +191,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Quote form: client-side validation + inline success (Formspree-compatible)
-const qf = document.getElementById('quote-form');
+const qf = document.getElementById('quote-form') || document.getElementById('quote-form-contact');
 if (qf) {
   qf.addEventListener('submit', async (e) => {
     e.preventDefault();

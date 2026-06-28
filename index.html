@@ -391,7 +391,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Quote form: client-side validation + inline success (Formspree-compatible)
-const qf = document.getElementById('quote-form');
+const qf = document.getElementById('quote-form') || document.getElementById('quote-form-contact');
 if (qf) {
   qf.addEventListener('submit', async (e) => {
     e.preventDefault();

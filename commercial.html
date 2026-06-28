@@ -32,10 +32,10 @@
     </div>
   </div>
 </nav>
-<section class="page-header with-bg" style="background-image: url('/img/job-637.jpg');">
+<section class="page-header with-bg" style="background-image: url('/img/job-620.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><a href="/services.html">Services</a><span class="sep">/</span><span>Commercial Demolition</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Commercial demolition,<br><span style="color: var(--accent);">on the GC's schedule.</span></h1>
+    <h1 style="font-family:'Bricolage Grotesque', sans-serif; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Commercial demolition,<br><span style="color: var(--accent);">on the GC's schedule.</span></h1>
     <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">Office, retail, warehouse, industrial. Selective strip-outs and full structures with permits closed before the next trade arrives.</p>
     <div style="margin-top: 32px;"><a href="/contact.html" class="btn-primary">Free On-Site Quote <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
   </div>
@@ -210,7 +210,7 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
 // Quote form: client-side validation + inline success (Formspree-compatible)
-const qf = document.getElementById('quote-form');
+const qf = document.getElementById('quote-form') || document.getElementById('quote-form-contact');
 if (qf) {
   qf.addEventListener('submit', async (e) => {
     e.preventDefault();

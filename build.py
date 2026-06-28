@@ -189,7 +189,7 @@ ARROW = '<svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" st
 # ============================================================
 
 # HOMEPAGE
-home_body = '''<section class="hero hero-tall with-bg-image" style="background-image: url('/img/job-636.jpg');">
+home_body = '''<section class="hero hero-tall with-bg-image" style="background-image: url('/img/job-638.jpg'); background-position: center 30%;">
   <div class="hero-grid"></div>
   <div class="container hero-content">
     <div class="hero-eyebrow"><span class="dot"></span>Booking July &amp; August now &middot; South Florida</div>
@@ -245,7 +245,7 @@ home_body = '''<section class="hero hero-tall with-bg-image" style="background-i
   </div>
 </section>
 
-<section id="process" class="process-section with-bg" style="background-image: url('/img/job-638.jpg');">
+<section id="process" class="process-section with-bg" style="background-image: url('/img/job-636.jpg');">
   <div class="container">
     <div class="reveal">
       <span class="section-eyebrow">The Process</span>

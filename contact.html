@@ -12,7 +12,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400;12..96,75..100,500;12..96,75..100,600;12..96,75..100,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -21,8 +22,9 @@
     <a href="/" class="logo">
       <img src="/fde-logo.png" alt="Florida Demolition Experts" />
     </a>
-    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
+      <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
     </button>
     <div class="nav-links">
       <a href="/" class="">Home</a><a href="/about.html" class="">About</a><a href="/services.html" class="">Services</a><a href="/portfolio.html" class="">Portfolio</a><a href="/reviews.html" class="">Reviews</a><a href="/blog.html" class="">Blog</a><a href="/contact.html" class="active">Contact</a>
@@ -143,7 +145,7 @@
     </div>
     <div class="footer-bottom">
       <div>&copy; 2026 Florida Demolition Experts. Woman-owned. South Florida.</div>
-      <div>Site by Dotoli Digital</div>
+      <div style="opacity: 0.5; font-size: 11px;">Site by Dotoli Digital</div>
     </div>
   </div>
 </footer>
@@ -158,6 +160,35 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Quote form: client-side validation + inline success (Formspree-compatible)
+const qf = document.getElementById('quote-form');
+if (qf) {
+  qf.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!qf.checkValidity()) { qf.reportValidity(); return; }
+    const btn = qf.querySelector('.form-submit');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      const res = await fetch(qf.action, {
+        method: 'POST',
+        body: new FormData(qf),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok || qf.action.includes('your-formspree-id')) {
+        // Treat placeholder Formspree URL as success for local preview
+        qf.classList.add('sent');
+        qf.querySelector('.form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        btn.disabled = false; btn.textContent = 'Request my free quote';
+        alert('Something went wrong sending the form. Please call us at 954-444-6643.');
+      }
+    } catch (err) {
+      btn.disabled = false; btn.textContent = 'Request my free quote';
+      alert('Network issue sending the form. Please call us at 954-444-6643.');
+    }
+  });
+}
 </script>
 </body>
 </html>

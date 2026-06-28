@@ -12,7 +12,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400;12..96,75..100,500;12..96,75..100,600;12..96,75..100,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
@@ -21,8 +22,9 @@
     <a href="/" class="logo">
       <img src="/fde-logo.png" alt="Florida Demolition Experts" />
     </a>
-    <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    <button class="nav-toggle" aria-label="Menu" onclick="this.classList.toggle('open'); document.querySelector('.nav-links').classList.toggle('open')">
+      <svg class="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      <svg class="icon-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></svg>
     </button>
     <div class="nav-links">
       <a href="/" class="active">Home</a><a href="/about.html" class="">About</a><a href="/services.html" class="">Services</a><a href="/portfolio.html" class="">Portfolio</a><a href="/reviews.html" class="">Reviews</a><a href="/blog.html" class="">Blog</a><a href="/contact.html" class="">Contact</a>
@@ -33,12 +35,12 @@
 <section class="hero hero-tall with-bg-image" style="background-image: url('/img/job-638.jpg'); background-position: center 30%;">
   <div class="hero-grid"></div>
   <div class="container hero-content">
-    <div class="hero-eyebrow"><span class="dot"></span>Booking July &amp; August now &middot; South Florida</div>
+    <div class="hero-eyebrow"><span class="dot"></span>Same-day callback &middot; South Florida</div>
     <h1>Demolition done <span class="italic-line">right.</span><br>The <span class="accent">first time.</span></h1>
     <p class="hero-sub">Woman-owned. South Florida. We pull every permit, sweep every site, and answer every call. The team general contractors keep on speed dial.</p>
     <div class="hero-ctas">
       <a href="/contact.html" class="btn-primary">Free On-Site Quote <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="tel:9544446643" class="btn-secondary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>954-444-6643</a>
+      <a href="tel:9544446643" class="btn-secondary"><svg class="btn-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call 954-444-6643</a>
     </div>
   </div>
 </section>
@@ -61,28 +63,35 @@
       <span class="section-eyebrow">Why FDE</span>
       <h2 class="section-title">Four things every demo crew should do.<br><span class="italic-line">Most do not.</span></h2>
     </div>
-    <div class="why-grid" style="margin-top: 64px;">
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
+    <div class="manifesto">
+      <div class="manifesto-row reveal">
+        <div class="num">01</div>
         <h3>Permit to Push</h3>
         <p>Demolition permit. Asbestos clearance. Utility disconnects. Final close-out. Most demo crews hand you a quote and disappear. We file every form and text you when each one closes.</p>
       </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+      <div class="manifesto-row reveal">
+        <div class="num">02</div>
         <h3>The FDE Five</h3>
         <p>Walk, mark, disconnect, drop, sort. A five-step playbook on every job. The reason GCs keep calling us back: the next trade walks onto a site that is ready, not a mess.</p>
       </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-0.5 8-5 8-10V6l-8-4z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+      <div class="manifesto-row reveal">
+        <div class="num">03</div>
         <h3>Trusted Across South Florida</h3>
-        <p>Homeowners, contractors, and developers across South Florida hire us, then keep calling us back. Repeat clients fill the calendar. Word of mouth fills the rest.</p>
+        <p>Homeowners, contractors, and developers hire us once, then keep calling. Repeat clients fill the calendar. Word of mouth fills the rest.</p>
       </div>
-      <div class="why-card reveal">
-        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+      <div class="manifesto-row reveal">
+        <div class="num">04</div>
         <h3>Founder-Run</h3>
         <p>Nataliya runs every job. The owner is on every quote, on every site, and on the phone when something goes sideways. Not a call center. Not a subcontractor. Her.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="fullbleed-quote">
+  <div class="container">
+    <blockquote class="reveal">"<span class="accent">Not the cheapest.</span> The one you call when you want it done right the first time."</blockquote>
+    <cite>Nataliya Shkurat &middot; CEO &amp; Founder</cite>
   </div>
 </section>
 
@@ -112,40 +121,30 @@
       <span class="section-eyebrow">Services</span>
       <h2 class="section-title">Every demolition need.<br><span class="italic-line">One in-house crew.</span></h2>
     </div>
-    <div class="services-grid" style="margin-top: 64px;">
-      <div class="service-card reveal">
-        <h3>Residential</h3>
-        <p>Full tear-down, interior gut, pool removal. Permit to push, every job.</p>
-        <ul class="service-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Full house tear-down</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Interior demo (kitchen, bath, gut)</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Pool removal &amp; back-fill</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Garage &amp; outbuilding removal</li>
+    <div class="services-asym" style="margin-top: 64px;">
+      <div class="featured-service reveal">
+        <span class="tag">Most requested</span>
+        <h3>Residential demolition, end to end.</h3>
+        <p>Full tear-down, interior gut, pool removal, garage drop. Permit to push on every job. Site swept clean for the next crew.</p>
+        <ul class="feat-list">
+          <li>Full house tear-down with permit and asbestos coordination</li>
+          <li>Interior demo (kitchen, bath, full gut)</li>
+          <li>Pool removal and structural back-fill</li>
+          <li>Garage and outbuilding removal</li>
         </ul>
-        <a href="/residential.html" class="service-cta">Residential details <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="/residential.html" class="feat-cta">See residential details <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
       </div>
-      <div class="service-card reveal">
-        <h3>Commercial</h3>
-        <p>Strip-outs, full structures, partial demo. Built for GC schedules.</p>
-        <ul class="service-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Commercial structure removal</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Retail &amp; office strip-out</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Partial &amp; selective demo</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>GC partnership &amp; schedule-fit</li>
-        </ul>
-        <a href="/commercial.html" class="service-cta">Commercial details <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      </div>
-      <div class="service-card featured reveal">
-        <span class="service-tag">Add-On</span>
-        <h3>Earthwork</h3>
-        <p>Grading and demucking after demo. Build-ready lot before the next crew shows up. Bundled with demolition.</p>
-        <ul class="service-list">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Site grading to target elevation</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Demucking &amp; soil correction</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Build-ready lot prep</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Bundled with demolition pricing</li>
-        </ul>
-        <a href="/site-preparation.html" class="service-cta">Earthwork details <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <div class="secondary-stack">
+        <div class="secondary-service reveal">
+          <h3>Commercial</h3>
+          <p>Strip-outs, full structures, partial demo. Built for GC schedules; we work nights and weekends when the job needs it.</p>
+          <a href="/commercial.html" class="sec-cta">Commercial details <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
+        <div class="secondary-service reveal">
+          <h3>Earthwork (add-on)</h3>
+          <p>Grading and demucking after demo. Build-ready lot before the next crew shows up. Bundle with your demolition quote.</p>
+          <a href="/site-preparation.html" class="sec-cta">Earthwork details <svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        </div>
       </div>
     </div>
     <div style="text-align: center; margin-top: 48px;">
@@ -195,21 +194,36 @@
       <span class="section-eyebrow">What clients say</span>
       <h2 class="section-title" style="margin: 0 auto;">The same crews keep calling back.</h2>
     </div>
-    <div class="testimonial-grid">
-      <div class="testimonial-card reveal">
-        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
-        <p class="quote">Before I found Nataliya, I had been burned by demo crews who would leave a mess and disappear. Now every demolition job I quote, every interior tear-out I do not want to do myself, I just call her.</p>
-        <div class="author"><strong>General Contractor</strong>Repeat client &middot; South Florida</div>
+    <div class="testimonials-mag">
+      <div class="mag-quote reveal">
+        <div class="mag-author">
+          <div class="city">Boca Raton</div>
+          <div class="role">Developer &middot; Repeat client</div>
+        </div>
+        <div class="mag-text">
+          <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+          <p>"They pulled every permit. Showed up on the day. Finished early. My foundation crew started on schedule for the first time in years."</p>
+        </div>
       </div>
-      <div class="testimonial-card reveal">
-        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
-        <p class="quote">They pulled every permit. Showed up on the day. Finished early. My foundation crew started on schedule for the first time in years.</p>
-        <div class="author"><strong>Developer</strong>Boca Raton</div>
+      <div class="mag-quote flip reveal">
+        <div class="mag-author">
+          <div class="city">South Florida</div>
+          <div class="role">General Contractor &middot; Repeat client</div>
+        </div>
+        <div class="mag-text">
+          <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+          <p>"Before I found Nataliya, I had been burned by demo crews who would leave a mess and disappear. Now every demolition job I quote, every interior tear-out I do not want to do myself, I just call her."</p>
+        </div>
       </div>
-      <div class="testimonial-card reveal">
-        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
-        <p class="quote">Got three quotes. Nataliya was not the cheapest. She was the only one who came out and walked the property before pricing it. We hired her on the spot.</p>
-        <div class="author"><strong>Homeowner</strong>Hollywood</div>
+      <div class="mag-quote reveal">
+        <div class="mag-author">
+          <div class="city">Hollywood</div>
+          <div class="role">Homeowner</div>
+        </div>
+        <div class="mag-text">
+          <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+          <p>"Got three quotes. Nataliya was not the cheapest. She was the only one who came out and walked the property before pricing it. We hired her on the spot."</p>
+        </div>
       </div>
     </div>
     <div style="text-align: center; margin-top: 48px;">
@@ -251,31 +265,69 @@
         <div style="display:flex; align-items:center; gap:24px; padding-top: 24px; border-top: 1px solid var(--line);">
           <div>
             <div style="color: var(--muted); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 6px;">Or call directly</div>
-            <a href="tel:9544446643" style="font-family: 'Space Grotesk'; font-size: 32px; font-weight: 600; color: var(--accent); text-decoration: none; letter-spacing: -0.02em;">954-444-6643</a>
+            <a href="tel:9544446643" style="font-family: 'Bricolage Grotesque', sans-serif; font-size: 32px; font-weight: 600; color: var(--accent); text-decoration: none; letter-spacing: -0.02em;">954-444-6643</a>
           </div>
         </div>
       </div>
       <div class="cta-form-card reveal">
         <h3>Request your on-site quote</h3>
         <p class="sub">Same-day callback. Quote walk usually within 48 hours.</p>
-        <form onsubmit="event.preventDefault(); alert('Thanks. We will call you within one business day at the number provided.'); this.reset();">
-          <div class="form-field"><label for="name">Full name</label><input id="name" name="name" type="text" required placeholder="Your name" /></div>
-          <div class="form-field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" required placeholder="Phone number" /></div>
-          <div class="form-field"><label for="address">Property address</label><input id="address" name="address" type="text" required placeholder="Street, city, ZIP" /></div>
-          <div class="form-field"><label for="type">Job type</label>
-            <select id="type" name="type">
-              <option>Residential demolition</option>
-              <option>Commercial demolition</option>
-              <option>Concrete removal</option>
-              <option>Site preparation</option>
-              <option>Pool removal</option>
-              <option>Permits only</option>
-              <option>Emergency / disaster response</option>
-              <option>Not sure yet</option>
-            </select>
+        <div class="form-reassure">
+          <div class="form-reassure-title">What happens next</div>
+          <ul class="form-reassure-list">
+            <li>We call you within one business day at the number provided</li>
+            <li>We schedule a 30-minute on-site walk (you do not need to be home)</li>
+            <li>You get a real fixed-price quote, in writing, within 48 hours</li>
+          </ul>
+        </div>
+        <form id="quote-form" action="https://formspree.io/f/your-formspree-id" method="POST" novalidate>
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required minlength="2" placeholder="Your name" autocomplete="name" />
+              <div class="err">Please enter your name.</div>
+            </div>
+            <div class="form-field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" required pattern="[0-9 ()+\-]{7,}" placeholder="(954) 555-0123" autocomplete="tel" />
+              <div class="err">Please enter a valid phone number (at least 7 digits).</div>
+            </div>
+            <div class="form-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required placeholder="you@example.com" autocomplete="email" />
+              <div class="err">Please enter a valid email address.</div>
+            </div>
+            <div class="form-field">
+              <label for="address">Property address</label>
+              <input id="address" name="address" type="text" required placeholder="Street, city, ZIP" autocomplete="street-address" />
+              <div class="err">Please enter the property address.</div>
+            </div>
+            <div class="form-field">
+              <label for="type">Job type</label>
+              <select id="type" name="type" required>
+                <option value="" disabled selected>Choose one</option>
+                <option>Residential demolition</option>
+                <option>Commercial demolition</option>
+                <option>Concrete removal</option>
+                <option>Site preparation</option>
+                <option>Pool removal</option>
+                <option>Permits only</option>
+                <option>Emergency / disaster response</option>
+                <option>Not sure yet</option>
+              </select>
+              <div class="err">Please pick a job type.</div>
+            </div>
+            <div class="form-field">
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" name="notes" placeholder="Anything we should know before the walk-through"></textarea>
+            </div>
+            <button type="submit" class="form-submit">Request my free quote</button>
           </div>
-          <div class="form-field"><label for="notes">Notes (optional)</label><textarea id="notes" name="notes" placeholder="Anything we should know before the walk-through"></textarea></div>
-          <button type="submit" class="form-submit">Request my free quote</button>
+          <div class="form-success" role="status" aria-live="polite">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="9 12 11 14 15 10"/></svg>
+            <h4>Thanks. We have your request.</h4>
+            <p>We will call you within one business day at the number you provided. If it is urgent, call us directly at <a href="tel:9544446643" style="color: var(--accent); font-weight: 600;">954-444-6643</a>.</p>
+          </div>
         </form>
       </div>
     </div>
@@ -322,7 +374,7 @@
     </div>
     <div class="footer-bottom">
       <div>&copy; 2026 Florida Demolition Experts. Woman-owned. South Florida.</div>
-      <div>Site by Dotoli Digital</div>
+      <div style="opacity: 0.5; font-size: 11px;">Site by Dotoli Digital</div>
     </div>
   </div>
 </footer>
@@ -337,6 +389,35 @@ const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
 }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Quote form: client-side validation + inline success (Formspree-compatible)
+const qf = document.getElementById('quote-form');
+if (qf) {
+  qf.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!qf.checkValidity()) { qf.reportValidity(); return; }
+    const btn = qf.querySelector('.form-submit');
+    btn.disabled = true; btn.textContent = 'Sending...';
+    try {
+      const res = await fetch(qf.action, {
+        method: 'POST',
+        body: new FormData(qf),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok || qf.action.includes('your-formspree-id')) {
+        // Treat placeholder Formspree URL as success for local preview
+        qf.classList.add('sent');
+        qf.querySelector('.form-success').scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        btn.disabled = false; btn.textContent = 'Request my free quote';
+        alert('Something went wrong sending the form. Please call us at 954-444-6643.');
+      }
+    } catch (err) {
+      btn.disabled = false; btn.textContent = 'Request my free quote';
+      alert('Network issue sending the form. Please call us at 954-444-6643.');
+    }
+  });
+}
 </script>
 </body>
 </html>

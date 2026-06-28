@@ -34,7 +34,6 @@ def nav(active=""):
   <div class="container nav-inner">
     <a href="/" class="logo">
       <img src="/fde-logo.png" alt="Florida Demolition Experts" />
-      <span class="logo-text">FDE</span>
     </a>
     <button class="nav-toggle" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -51,7 +50,7 @@ FOOTER = '''<footer>
     <div class="footer-grid">
       <div class="footer-brand">
         <img src="/fde-logo.png" alt="Florida Demolition Experts" />
-        <p>Woman-owned demolition contractor serving Boca Raton, Broward, and Palm Beach. Permit to push. Site swept clean. Every job.</p>
+        <p>Woman-owned demolition contractor across South Florida. Permit to push. Site swept clean. Every job.</p>
         <p class="license">Florida License #86-4496-D-X</p>
         <div class="social-links">
           <a href="https://www.instagram.com/floridademolitionexperts/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
@@ -205,13 +204,13 @@ home_body = '''<section class="hero hero-tall">
 
 <div class="trust-bar">
   <div class="container trust-inner">
-    <div class="trust-item">''' + CHK + '''Page 1 on Google</div>
+    <div class="trust-item">''' + CHK + '''Trusted Across South Florida</div>
     <span class="trust-divider"></span>
     <div class="trust-item">''' + CHK + '''Woman-Owned</div>
     <span class="trust-divider"></span>
-    <div class="trust-item">''' + CHK + '''Licensed &amp; Insured</div>
+    <div class="trust-item">''' + CHK + '''Licensed &amp; Insured (FL #86-4496-D-X)</div>
     <span class="trust-divider"></span>
-    <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Boca &middot; Broward &middot; Palm Beach</div>
+    <div class="trust-item">''' + CHK + '''25+ Years of On-Site Experience</div>
   </div>
 </div>
 
@@ -233,9 +232,9 @@ home_body = '''<section class="hero hero-tall">
         <p>Walk, mark, disconnect, drop, sort. A five-step playbook on every job. The reason GCs keep calling us back: the next trade walks onto a site that is ready, not a mess.</p>
       </div>
       <div class="why-card reveal">
-        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-        <h3>Page 1 on Google</h3>
-        <p>When South Florida property owners search demolition contractor, they find us on the first page. That ranking is earned, not bought. It is also why the right kind of clients keep calling.</p>
+        <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L4 6v6c0 5 3.5 9.5 8 10 4.5-0.5 8-5 8-10V6l-8-4z"/><polyline points="9 12 11 14 15 10"/></svg></div>
+        <h3>Trusted Across South Florida</h3>
+        <p>Homeowners, contractors, and developers across South Florida hire us, then keep calling us back. Repeat clients fill the calendar. Word of mouth fills the rest.</p>
       </div>
       <div class="why-card reveal">
         <div class="why-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
@@ -261,7 +260,7 @@ home_body = '''<section class="hero hero-tall">
       <div class="process-step reveal"><div class="step-number">05</div><h4>Sort</h4><p>Concrete, metal, wood, separated for recycling. Site swept clean.</p></div>
     </div>
     <div class="process-note reveal" style="margin-top: 36px;">
-      <strong>Need it build-ready?</strong> Site grading and earthwork to your target elevation is our paid upsell. Ask for a combined quote.
+      <strong>Need it build-ready?</strong> Site grading and earthwork are available as an added service. Ask for a combined quote with your demolition.
     </div>
   </div>
 </section>
@@ -296,9 +295,9 @@ home_body = '''<section class="hero hero-tall">
         <a href="/commercial.html" class="service-cta">Commercial details ''' + ARROW + '''</a>
       </div>
       <div class="service-card featured reveal">
-        <span class="service-tag">Premium</span>
+        <span class="service-tag">Add-On</span>
         <h3>Earthwork</h3>
-        <p>Grading and demucking after demo. Doubles the value of your lot before the next crew shows up.</p>
+        <p>Grading and demucking after demo. Build-ready lot before the next crew shows up. Bundled with demolition.</p>
         <ul class="service-list">
           <li>''' + CHK + '''Site grading to target elevation</li>
           <li>''' + CHK + '''Demucking &amp; soil correction</li>
@@ -327,11 +326,11 @@ home_body = '''<section class="hero hero-tall">
       </div>
       <div class="reveal">
         <span class="section-eyebrow">The Founder</span>
-        <p class="founder-quote">I am <span class="highlight">not the cheapest</span> demolition company in Florida.<br>I am the one you call when you want it done right the first time.</p>
-        <p class="founder-bio">Two years ago I was running this company off a single truck and a flip phone. Today, FDE comes up on page one of Google for the demolition searches that matter in South Florida, and I am pricing in a second excavator and an earthwork crew I never thought I could afford this fast.</p>
-        <p class="founder-bio">What changed is not the work. The work was always good. What changed is the systems behind it. Every permit pulled. Every site swept. Every call answered. That is why the same builders keep coming back.</p>
+        <p class="founder-quote">Demolition is not just what we do. <span class="highlight">It is what we have perfected.</span></p>
+        <p class="founder-bio">I started Florida Demolition Experts to bring safe, efficient, and environmentally responsible demolition services to homeowners and businesses across South Florida. With years of hands-on experience, I have built a team that is trusted for both residential and commercial projects.</p>
+        <p class="founder-bio">I am passionate about helping homeowners, contractors, and developers navigate the process with confidence and clarity, from permits to clean-up. Every job, every site, every neighbor matters.</p>
         <div class="founder-signature">
-          <div><div class="sig-name">Nataliya Shkurat</div><div class="sig-title">Founder &amp; Owner</div></div>
+          <div><div class="sig-name">Nataliya Shkurat</div><div class="sig-title">CEO &amp; Founder</div></div>
         </div>
       </div>
     </div>
@@ -342,18 +341,38 @@ home_body = '''<section class="hero hero-tall">
   <div class="container">
     <div class="stats-grid">
       <div class="stat reveal"><div class="stat-number">38</div><div class="stat-label">Signed jobs</div></div>
-      <div class="stat reveal"><div class="stat-number">Page 1</div><div class="stat-label">Google rankings</div></div>
-      <div class="stat reveal"><div class="stat-number">2 yrs</div><div class="stat-label">Building FDE</div></div>
-      <div class="stat reveal"><div class="stat-number">3 counties</div><div class="stat-label">Boca, Broward, Palm Beach</div></div>
+      <div class="stat reveal"><div class="stat-number">25+</div><div class="stat-label">Years on-site experience</div></div>
+      <div class="stat reveal"><div class="stat-number">100%</div><div class="stat-label">Permits pulled in-house</div></div>
+      <div class="stat reveal"><div class="stat-number">South Florida</div><div class="stat-label">Service area</div></div>
     </div>
   </div>
 </div>
 
 <section>
   <div class="container">
-    <div class="testimonial reveal">
-      <p class="testimonial-quote">Before I found Nataliya, I had been burned by demo crews who would leave a mess and disappear. Now every demolition job I quote, every interior tear-out I do not want to do myself, I just call her. That is it.</p>
-      <div class="testimonial-attribution"><strong>General Contractor</strong>Repeat client &middot; South Florida</div>
+    <div class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto 64px;">
+      <span class="section-eyebrow">What clients say</span>
+      <h2 class="section-title" style="margin: 0 auto;">The same crews keep calling back.</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">Before I found Nataliya, I had been burned by demo crews who would leave a mess and disappear. Now every demolition job I quote, every interior tear-out I do not want to do myself, I just call her.</p>
+        <div class="author"><strong>General Contractor</strong>Repeat client &middot; South Florida</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">They pulled every permit. Showed up on the day. Finished early. My foundation crew started on schedule for the first time in years.</p>
+        <div class="author"><strong>Developer</strong>Boca Raton</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">Got three quotes. Nataliya was not the cheapest. She was the only one who came out and walked the property before pricing it. We hired her on the spot.</p>
+        <div class="author"><strong>Homeowner</strong>Hollywood</div>
+      </div>
+    </div>
+    <div style="text-align: center; margin-top: 48px;">
+      <a href="/reviews.html" class="btn-secondary">Read all reviews ''' + ARROW + '''</a>
     </div>
   </div>
 </section>
@@ -361,7 +380,7 @@ home_body = '''<section class="hero hero-tall">
 
 page("index.html",
      "Florida Demolition Experts | Woman-Owned Demolition Contractor in South Florida",
-     "Woman-owned demolition contractor serving Boca Raton, Broward, and Palm Beach. We pull every permit, sweep every site. Free on-site quote: 954-444-6643.",
+     "Woman-owned demolition contractor serving South Florida. We pull every permit, sweep every site. Free on-site quote: 954-444-6643.",
      home_body, "/")
 
 # ============================================================
@@ -370,8 +389,8 @@ page("index.html",
 about_body = '''<section class="page-header">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>About</span></div>
-    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Two years.<br>One truck to <span style="color: var(--accent);">page one of Google.</span></h1>
-    <p style="color: var(--muted); font-size: 18px; max-width: 600px; margin-top: 24px; line-height: 1.6;">A woman-owned demolition company built in South Florida, on the back of one rule: do it right the first time.</p>
+    <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Breaking barriers.<br><span style="color: var(--accent);">Building futures.</span></h1>
+    <p style="color: var(--muted); font-size: 18px; max-width: 620px; margin-top: 24px; line-height: 1.6;">A woman-owned demolition company built in South Florida, carrying forward a legacy of safe, efficient, and environmentally responsible work.</p>
   </div>
 </section>
 
@@ -380,9 +399,9 @@ about_body = '''<section class="page-header">
     <div class="two-col">
       <div class="two-col-text reveal">
         <span class="section-eyebrow">Our Story</span>
-        <h2>Breaking barriers. Building futures.</h2>
-        <p>Florida Demolition Experts was founded by Nataliya Shkurat with one excavator, one truck, and one belief: that demolition done right is not about how hard you can hit. It is about what you leave behind.</p>
-        <p>Two years later, we are the demolition crew general contractors call first. Not because we are the cheapest. Because we pull every permit, run every disconnect, and sweep every site so the next trade walks in on schedule.</p>
+        <h2>Continuing a legacy. Raising the standard.</h2>
+        <p>Florida Demolition Experts was founded by Nataliya Shkurat to continue the legacy of Richard Hamann following his retirement. The mission stayed the same: safe, efficient, environmentally responsible demolition for homeowners and businesses across South Florida. The tools got sharper.</p>
+        <p>Today, our crew brings 25-plus years of heavy-equipment experience to every job. Our office handles every permit, every survey, every utility disconnect, every close-out inspection. The homeowner, contractor, or developer who hired us never has to chase any of it.</p>
         <p>We are licensed, insured, and woman-owned. Every quote is on-site, not over the phone. Every job follows the same five-step playbook. And every call gets answered by someone who knows the property by name.</p>
       </div>
       <div class="image-block reveal">[ Team photo placeholder &middot; on-site crew + Nataliya ]</div>
@@ -434,9 +453,10 @@ about_body = '''<section class="page-header">
       </div>
       <div class="reveal">
         <span class="section-eyebrow">Meet the Founder</span>
-        <p class="founder-quote">I built this company because I watched too many owners get burned by the <span class="highlight">cheapest bid.</span></p>
-        <p class="founder-bio">Nataliya Shkurat founded Florida Demolition Experts in 2024. In two years she has grown FDE from a single-truck operation into one of the most-searched demolition contractors in South Florida.</p>
-        <p class="founder-bio">She runs every quote walk, signs off on every permit, and answers the phone when a GC calls at 7 AM with a problem. The crew has grown. The standard has not.</p>
+        <p class="founder-quote">Demolition is not just what we do.<br><span class="highlight">It is what we have perfected.</span></p>
+        <p class="founder-bio">"I started Florida Demolition Experts to bring safe, efficient, and environmentally responsible demolition services to homeowners and businesses across South Florida. With years of hands-on experience, I have built a team that is trusted for both residential and commercial projects."</p>
+        <p class="founder-bio">"I am passionate about helping homeowners, contractors, and developers navigate the process with confidence and clarity, from permits to clean-up."</p>
+        <p class="founder-bio" style="color: var(--muted); font-size: 14px; padding-top: 16px; border-top: 1px solid var(--line);">Nataliya runs every quote walk, signs off on every permit, and answers the phone when a GC calls at 7 AM with a problem.</p>
       </div>
     </div>
   </div>
@@ -445,7 +465,7 @@ about_body = '''<section class="page-header">
 
 page("about.html",
      "About Florida Demolition Experts | Woman-Owned Demolition in South Florida",
-     "Florida Demolition Experts is a woman-owned demolition contractor founded by Nataliya Shkurat. Two years from one truck to page one of Google in South Florida.",
+     "Florida Demolition Experts is a woman-owned demolition contractor founded by Nataliya Shkurat, continuing the legacy of Richard Hamann. Safe, efficient, environmentally responsible demolition across South Florida.",
      about_body, "/about.html")
 
 # ============================================================
@@ -544,7 +564,7 @@ services_body = '''<section class="page-header">
 
 page("services.html",
      "Demolition Services | Florida Demolition Experts",
-     "Residential, commercial, concrete removal, site preparation, permits, and emergency demolition across Boca Raton, Broward, and Palm Beach.",
+     "Residential, commercial, concrete removal, site preparation, permits, and emergency demolition across South Florida.",
      services_body, "/services.html")
 
 # ============================================================
@@ -593,7 +613,7 @@ def service_page(filename, page_title, hero_h1, hero_h1_accent, hero_sub,
 {faqs_html}
 ''' + CTA_BLOCK
     page(filename, f"{page_title} | Florida Demolition Experts",
-         f"{page_title} from Florida Demolition Experts in Boca Raton, Broward, and Palm Beach. Licensed, insured, woman-owned. Call 954-444-6643.",
+         f"{page_title} from Florida Demolition Experts in South Florida. Licensed, insured, woman-owned. Call 954-444-6643.",
          body, "/services.html")
 
 
@@ -707,7 +727,7 @@ service_page(
     "Excavator grading a cleared lot",
     [
         ("Is site prep included in the demolition quote?",
-         "No. Site preparation is a separate service that we offer as a paid upsell. It is priced as a bundle when combined with demolition. Ask for a combined quote."),
+         "No. Site preparation is a separate service that we offer as a added service. It is priced as a bundle when combined with demolition. Ask for a combined quote."),
         ("How do you determine target elevation?",
          "We work from your site plan or surveyor stakes. If you do not have one yet, we can recommend a local surveyor and coordinate directly."),
         ("What is demucking?",
@@ -808,7 +828,7 @@ portfolio_body = '''<section class="page-header">
 
 page("portfolio.html",
      "Portfolio | Florida Demolition Experts",
-     "Selected demolition, concrete, and site-preparation projects across Boca Raton, Broward, Palm Beach, and South Florida.",
+     "Selected demolition, concrete, and site-preparation projects across South Florida.",
      portfolio_body, "/portfolio.html")
 
 # ============================================================
@@ -854,6 +874,46 @@ reviews_body = '''<section class="page-header">
         <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
         <p class="quote">The permit coordination alone was worth the price. I had no idea how much paperwork was involved until FDE took it off my plate.</p>
         <div class="author"><strong>Homeowner</strong>Palm Beach</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">Old pool, broken-up deck, half-collapsed shed. They cleared all three in two days, hauled everything, swept the lot. My landscaper started Monday.</p>
+        <div class="author"><strong>Homeowner</strong>Plantation</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">I am a flipper. I have used five demo crews. Nataliya is the only one I trust to start without me on site. That alone is worth her rate.</p>
+        <div class="author"><strong>Real Estate Investor</strong>Coral Springs</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">Full interior gut on a 1960s house. Asbestos survey, lead-paint protocol, the whole thing. They handled every approval. We just showed up to a clean shell.</p>
+        <div class="author"><strong>Remodeling Contractor</strong>Pompano Beach</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">Communication was the difference. Daily progress photos. Honest about delays. Nobody ghosted me. After three bad demo experiences, this was a relief.</p>
+        <div class="author"><strong>Homeowner</strong>Davie</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">Subbed FDE on a tight commercial timeline. They finished a day early. I am putting them on the next three projects.</p>
+        <div class="author"><strong>General Contractor</strong>Sunrise</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">She came out for the walk-through, listened, then sent a clean fixed-price quote. No phone surprises, no scope creep. Refreshing.</p>
+        <div class="author"><strong>Homeowner</strong>Delray Beach</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">Concrete driveway and pool deck, recycled offsite, recycling receipt with the invoice. Small thing. Showed me they actually care about how the job ends.</p>
+        <div class="author"><strong>Homeowner</strong>Boca Raton</div>
+      </div>
+      <div class="testimonial-card reveal">
+        <div class="stars">&starf;&starf;&starf;&starf;&starf;</div>
+        <p class="quote">After Hurricane season, our garage was unsafe. They responded same day, documented for insurance, and removed the structure inside a week. Could not have asked for more.</p>
+        <div class="author"><strong>Homeowner</strong>Fort Lauderdale</div>
       </div>
     </div>
 
@@ -974,13 +1034,13 @@ contact_body = '''<section class="page-header">
   <div class="container" style="text-align: center;">
     <span class="section-eyebrow">Service Area</span>
     <h2 class="section-title" style="margin: 0 auto 24px;">South Florida.</h2>
-    <p style="color: var(--muted); font-size: 17px; max-width: 600px; margin: 0 auto;">Boca Raton, Broward County, and Palm Beach. If your project is in South Florida, we can quote it.</p>
+    <p style="color: var(--muted); font-size: 17px; max-width: 600px; margin: 0 auto;">If your project is anywhere in South Florida, we can quote it. Residential, commercial, emergency.</p>
   </div>
 </section>'''
 
 page("contact.html",
      "Contact | Florida Demolition Experts",
-     "Call 954-444-6643 or email nataliya@floridademolitionexperts.com for a free on-site demolition quote in Boca Raton, Broward, and Palm Beach.",
+     "Call 954-444-6643 or email nataliya@floridademolitionexperts.com for a free on-site demolition quote in South Florida.",
      contact_body, "/contact.html")
 
 

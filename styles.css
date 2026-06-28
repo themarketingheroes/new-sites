@@ -92,9 +92,10 @@ nav.top.scrolled { border-bottom: 1px solid var(--line); background: rgba(10, 10
 .hero.with-bg-image { background-size: cover; background-position: center; }
 .hero.with-bg-image::before {
   background:
-    linear-gradient(110deg, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.85) 45%, rgba(10, 10, 10, 0.55) 100%),
-    linear-gradient(180deg, transparent 60%, var(--bg) 100%);
+    linear-gradient(110deg, rgba(10, 10, 10, 0.72) 0%, rgba(10, 10, 10, 0.40) 55%, rgba(10, 10, 10, 0.20) 100%),
+    linear-gradient(180deg, transparent 65%, var(--bg) 100%);
 }
+.hero.with-bg-image h1, .hero.with-bg-image .hero-sub { text-shadow: 0 2px 18px rgba(0,0,0,0.65); }
 
 /* ============= VIDEO EMBED ============= */
 .video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
@@ -200,8 +201,10 @@ section { padding: 120px 0; position: relative; }
 .process-section.with-bg { background-size: cover; background-position: center; background-attachment: fixed; }
 .process-section.with-bg::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(180deg, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.88) 60%, rgba(10,10,10,0.94) 100%);
+  background: linear-gradient(180deg, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.55) 50%, rgba(10,10,10,0.78) 100%);
 }
+.process-section.with-bg .section-title, .process-section.with-bg .section-sub, .process-section.with-bg .section-eyebrow { text-shadow: 0 2px 14px rgba(0,0,0,0.55); }
+.process-section.with-bg .process-step { background: rgba(20,20,20,0.92); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
 .process-section.with-bg .container { position: relative; z-index: 1; }
 @media (max-width: 900px) { .process-section.with-bg { background-attachment: scroll; } }
 .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-top: 64px; }
@@ -263,8 +266,9 @@ section { padding: 120px 0; position: relative; }
 .stats-strip.with-bg { background-color: var(--bg); background-size: cover; background-position: center; }
 .stats-strip.with-bg::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(110deg, rgba(255,107,53,0.92) 0%, rgba(255,107,53,0.75) 60%, rgba(255,87,34,0.65) 100%);
+  background: linear-gradient(110deg, rgba(255,107,53,0.78) 0%, rgba(255,107,53,0.55) 60%, rgba(255,87,34,0.45) 100%);
 }
+.stats-strip.with-bg .stat-number, .stats-strip.with-bg .stat-label { text-shadow: 0 2px 12px rgba(0,0,0,0.45); }
 .stats-strip.with-bg .container { position: relative; z-index: 1; }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 @media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; } }
@@ -293,8 +297,10 @@ section { padding: 120px 0; position: relative; }
 .cta-section.with-bg { background-size: cover; background-position: center; background-attachment: fixed; }
 .cta-section.with-bg::before {
   content: ''; position: absolute; inset: 0; pointer-events: none;
-  background: linear-gradient(115deg, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.82) 50%, rgba(10,10,10,0.92) 100%);
+  background: linear-gradient(115deg, rgba(10,10,10,0.78) 0%, rgba(10,10,10,0.45) 50%, rgba(10,10,10,0.70) 100%);
 }
+.cta-section.with-bg .section-title, .cta-section.with-bg .section-sub, .cta-section.with-bg .section-eyebrow { text-shadow: 0 2px 14px rgba(0,0,0,0.55); }
+.cta-section.with-bg a[href^="tel:"] { text-shadow: 0 2px 18px rgba(0,0,0,0.75); }
 .cta-section.with-bg .container { position: relative; z-index: 1; }
 @media (max-width: 900px) { .cta-section.with-bg { background-attachment: scroll; } }
 .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
@@ -320,9 +326,10 @@ section { padding: 120px 0; position: relative; }
 .page-header.with-bg { background-size: cover; background-position: center; }
 .page-header.with-bg::before {
   background:
-    linear-gradient(110deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.78) 55%, rgba(10,10,10,0.55) 100%),
+    linear-gradient(110deg, rgba(10,10,10,0.75) 0%, rgba(10,10,10,0.42) 55%, rgba(10,10,10,0.20) 100%),
     radial-gradient(circle at 30% 50%, var(--accent-soft) 0%, transparent 50%);
 }
+.page-header.with-bg h1, .page-header.with-bg p, .page-header.with-bg .crumb { text-shadow: 0 2px 16px rgba(0,0,0,0.65); }
 .page-header .container { position: relative; z-index: 1; }
 .crumb { display: inline-flex; gap: 10px; color: var(--muted); font-size: 13px; margin-bottom: 24px; }
 .crumb a { color: var(--muted); }

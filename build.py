@@ -189,7 +189,7 @@ ARROW = '<svg style="width:16px;height:16px;" viewBox="0 0 24 24" fill="none" st
 # ============================================================
 
 # HOMEPAGE
-home_body = '''<section class="hero hero-tall">
+home_body = '''<section class="hero hero-tall with-bg-image" style="background-image: url('/img/job-636.jpg');">
   <div class="hero-grid"></div>
   <div class="container hero-content">
     <div class="hero-eyebrow"><span class="dot"></span>Booking July &amp; August now &middot; South Florida</div>
@@ -316,12 +316,12 @@ home_body = '''<section class="hero hero-tall">
 <section id="founder" style="background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);">
   <div class="container">
     <div class="founder-grid">
-      <div class="founder-image reveal">
-        <div class="placeholder-text">[ Founder photo placeholder &middot; replace with Nataliya headshot from Kalvin shoot ]</div>
+      <div class="founder-image has-image reveal">
+        <img src="/img/founder-1.jpg" alt="Nataliya Shkurat, CEO and Founder of Florida Demolition Experts" loading="lazy" />
         <div class="founder-image-overlay"></div>
         <div class="founder-image-text">
           <div class="name">Nataliya Shkurat</div>
-          <div class="role">Founder, Florida Demolition Experts</div>
+          <div class="role">CEO &amp; Founder, Florida Demolition Experts</div>
         </div>
       </div>
       <div class="reveal">
@@ -376,6 +376,30 @@ home_body = '''<section class="hero hero-tall">
     </div>
   </div>
 </section>
+
+<section class="process-section">
+  <div class="container">
+    <div class="reveal" style="max-width: 700px;">
+      <span class="section-eyebrow">Watch Us Work</span>
+      <h2 class="section-title">From the founder. From the field.</h2>
+      <p class="section-sub">Short clips from job sites, founder stories, and the work behind the work. More on our <a href="https://www.youtube.com/@FloridaDemolitionExperts" target="_blank" rel="noopener" style="color: var(--accent);">YouTube channel</a>.</p>
+    </div>
+    <div class="video-grid" style="margin-top: 32px;">
+      <div class="reveal">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/m-woYWDrTV0" title="Breaking Barriers in Demolition" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="video-caption"><strong>Breaking Barriers in Demolition</strong>The FDE story, on a job site with the Bobcat.</div>
+      </div>
+      <div class="reveal">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/GXYjAFcLiIU" title="Boca Raton 3M Lot Site Clearing" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="video-caption"><strong>Boca Raton $3M Lot</strong>Spotless site clearing and demolition. Build-ready, fast.</div>
+      </div>
+      <div class="reveal">
+        <div class="video-wrap"><iframe src="https://www.youtube.com/embed/MwSUcIBOuqo" title="High-Risk Coastal Demolition in Pompano Beach" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+        <div class="video-caption"><strong>High-Risk Coastal Demolition</strong>Pompano Beach, controlling the risks on a complex site.</div>
+      </div>
+    </div>
+  </div>
+</section>
 ''' + CTA_BLOCK
 
 page("index.html",
@@ -404,7 +428,7 @@ about_body = '''<section class="page-header">
         <p>Today, our crew brings 25-plus years of heavy-equipment experience to every job. Our office handles every permit, every survey, every utility disconnect, every close-out inspection. The homeowner, contractor, or developer who hired us never has to chase any of it.</p>
         <p>We are licensed, insured, and woman-owned. Every quote is on-site, not over the phone. Every job follows the same five-step playbook. And every call gets answered by someone who knows the property by name.</p>
       </div>
-      <div class="image-block reveal">[ Team photo placeholder &middot; on-site crew + Nataliya ]</div>
+      <div class="image-block has-image reveal"><img src="/img/job-625.jpg" alt="FDE crew on a South Florida job site" loading="lazy" /></div>
     </div>
   </div>
 </section>
@@ -443,12 +467,12 @@ about_body = '''<section class="page-header">
 <section>
   <div class="container">
     <div class="founder-grid">
-      <div class="founder-image reveal">
-        <div class="placeholder-text">[ Nataliya headshot placeholder ]</div>
+      <div class="founder-image has-image reveal">
+        <img src="/img/founder-1.jpg" alt="Nataliya Shkurat, CEO and Founder of Florida Demolition Experts" loading="lazy" />
         <div class="founder-image-overlay"></div>
         <div class="founder-image-text">
           <div class="name">Nataliya Shkurat</div>
-          <div class="role">Founder &amp; Owner</div>
+          <div class="role">CEO &amp; Founder</div>
         </div>
       </div>
       <div class="reveal">
@@ -571,7 +595,7 @@ page("services.html",
 # SERVICE PAGE BUILDER (reusable)
 # ============================================================
 def service_page(filename, page_title, hero_h1, hero_h1_accent, hero_sub,
-                 lead_h2, lead_p, bullets, side_image_caption, faqs=None):
+                 lead_h2, lead_p, bullets, side_image_caption, faqs=None, image_path=None, extra_html=""):
     bullets_html = "\n".join([f'<li>{b}</li>' for b in bullets])
     faqs_html = ""
     if faqs:
@@ -605,11 +629,12 @@ def service_page(filename, page_title, hero_h1, hero_h1_accent, hero_sub,
         <ul>{bullets_html}</ul>
         <a href="/contact.html" class="btn-primary">Get a quote {ARROW}</a>
       </div>
-      <div class="image-block reveal">[ {side_image_caption} ]</div>
+      {'<div class="image-block has-image reveal"><img src="' + image_path + '" alt="' + side_image_caption + '" loading="lazy" /></div>' if image_path else '<div class="image-block reveal">[ ' + side_image_caption + ' ]</div>'}
     </div>
   </div>
 </section>
 
+{extra_html}
 {faqs_html}
 ''' + CTA_BLOCK
     page(filename, f"{page_title} | Florida Demolition Experts",
@@ -644,7 +669,8 @@ service_page(
          "Yes. We break out the pool shell, structural back-fill with compacted clean fill, and grade the surface to your target elevation. Quoted as one combined service."),
         ("Will my insurance cover any damage?",
          "Most homeowners policies will not cover damage from unpermitted work. With FDE, every permit is pulled, every disconnect is authorized, and we carry full liability insurance throughout the job."),
-    ]
+    ],
+    image_path="/img/job-636.jpg"
 )
 
 # COMMERCIAL
@@ -674,7 +700,8 @@ service_page(
          "Dust suppression, scaffolded barriers, and noise scheduling are built into the quote. We walk the boundary with you before day one."),
         ("Will you provide daily progress updates?",
          "Yes. The site foreman sends a daily photo + status to the GC and the owner. You always know where the job stands."),
-    ]
+    ],
+    image_path="/img/job-624.jpg"
 )
 
 # CONCRETE REMOVAL
@@ -704,7 +731,8 @@ service_page(
          "Yes. All concrete is hauled to a certified recycling facility where it is crushed for road base and aggregate. You get a recycling receipt with your final invoice."),
         ("Can you remove the concrete and then prep the area for new pour?",
          "Yes. Removal, sub-base prep, and grading can be quoted as one combined service. Bundle saves time and money."),
-    ]
+    ],
+    image_path="/img/job-641.jpg"
 )
 
 # SITE PREPARATION
@@ -734,7 +762,8 @@ service_page(
          "South Florida soil sometimes contains organic muck that cannot support structural loads. Demucking removes that layer and replaces it with engineered fill. We test, remove, and re-compact in one trip."),
         ("Can you handle the entire pre-construction package?",
          "Yes. Demolition, clearing, grading, and excavation in one contract, one crew, one schedule. That is the point of having it all in-house."),
-    ]
+    ],
+    image_path="/img/job-611.jpg"
 )
 
 # PERMITS
@@ -764,7 +793,19 @@ service_page(
          "We coordinate the certified abatement subcontractor and pull the survey. You get one point of contact, one timeline, one combined quote."),
         ("What happens if my project does not need a permit?",
          "Some interior tear-outs and small structures qualify for permit-exempt status. We confirm with the local building department before we tell you either way."),
-    ]
+    ],
+    image_path="/img/job-625.jpg",
+    extra_html='''<section class="process-section" style="padding: 80px 0;">
+  <div class="container">
+    <div class="reveal" style="text-align: center; max-width: 700px; margin: 0 auto 48px;">
+      <span class="section-eyebrow">From Nataliya</span>
+      <h2 class="section-title" style="margin: 0 auto;">What permit runners miss.</h2>
+    </div>
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div class="video-wrap"><iframe src="https://www.youtube.com/embed/k8oRmIPQ8Xk" title="Stop Hiring a Permit Runner for Demolition" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe></div>
+    </div>
+  </div>
+</section>'''
 )
 
 # EMERGENCY
@@ -794,7 +835,8 @@ service_page(
          "We bring a structural-aware crew with shoring equipment and controlled-collapse experience. Safety of adjacent properties and people is the first call we make."),
         ("Is emergency demo more expensive?",
          "There is an expedited-response premium for same-day mobilization. We tell you up front before any work starts. No surprise invoicing after the fact."),
-    ]
+    ],
+    image_path="/img/job-619.jpg"
 )
 
 # ============================================================
@@ -811,17 +853,16 @@ portfolio_body = '''<section class="page-header">
 <section style="padding-top: 0;">
   <div class="container">
     <div class="portfolio-grid">
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Residential &middot; 3,200 sq ft</div><h4>Full Home Tear-Down</h4><p>Boca Raton. Single-family demolition, pool removal, site graded for new build. 6 hours on site.</p></div></div>
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Commercial &middot; Strip-out</div><h4>Retail Tenant Fit-Out</h4><p>Fort Lauderdale. After-hours strip-out for a new tenant. Walls, ceilings, fixtures gone in 4 nights.</p></div></div>
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Residential &middot; Interior gut</div><h4>Whole-House Interior</h4><p>Hollywood. Full interior tear-out to studs for remodel. Salvaged fixtures preserved per owner request.</p></div></div>
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Concrete &middot; 1,400 sq ft</div><h4>Driveway &amp; Pool Deck</h4><p>Pompano Beach. Saw-cut driveway and old pool deck, recycled at certified facility.</p></div></div>
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Site Prep &middot; Build-ready</div><h4>Lot Clear + Grade</h4><p>Coral Springs. Land clearing, demucking, grading to target elevation for new construction.</p></div></div>
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Emergency &middot; Storm</div><h4>Hurricane Damage Removal</h4><p>Delray Beach. Damaged structure cleared for insurance assessment within 48 hours of call.</p></div></div>
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Residential &middot; Pool</div><h4>Pool Removal &amp; Fill</h4><p>Plantation. Old in-ground pool broken out, structural back-fill, lot ready for landscaping.</p></div></div>
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Commercial &middot; Warehouse</div><h4>Industrial Strip-Out</h4><p>Davie. Selective demo inside an active warehouse. Production never stopped.</p></div></div>
-      <div class="portfolio-card reveal"><div class="portfolio-thumb">[ Before / After photo ]</div><div class="portfolio-card-body"><div class="meta">Concrete &middot; Foundation</div><h4>Slab &amp; Foundation</h4><p>Sunrise. Full residential slab removal, broken out and hauled in one day.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-636.jpg" alt="Full home demolition in progress" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Residential &middot; Full tear-down</div><h4>Single-Family Demolition</h4><p>Boca Raton. Single-family demolition, pool removal, site graded for new build.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-638.jpg" alt="Commercial strip-out" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Commercial &middot; Strip-out</div><h4>Retail Tenant Fit-Out</h4><p>Fort Lauderdale. After-hours strip-out for a new tenant. Walls, ceilings, fixtures gone in 4 nights.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-640.jpg" alt="Interior gut to studs" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Residential &middot; Interior gut</div><h4>Whole-House Interior</h4><p>Hollywood. Full interior tear-out to studs for remodel. Salvaged fixtures preserved per owner request.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-641.jpg" alt="Driveway and pool deck removal" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Concrete &middot; 1,400 sq ft</div><h4>Driveway &amp; Pool Deck</h4><p>Pompano Beach. Saw-cut driveway and old pool deck, recycled at certified facility.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-611.jpg" alt="Cleared lot graded build-ready" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Site Prep &middot; Build-ready</div><h4>Lot Clear + Grade</h4><p>Coral Springs. Land clearing, demucking, grading to target elevation for new construction.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-619.jpg" alt="Storm damage removal" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Emergency &middot; Storm</div><h4>Hurricane Damage Removal</h4><p>Delray Beach. Damaged structure cleared for insurance assessment within 48 hours of call.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-621.jpg" alt="Pool removal in progress" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Residential &middot; Pool</div><h4>Pool Removal &amp; Fill</h4><p>Plantation. Old in-ground pool broken out, structural back-fill, lot ready for landscaping.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-624.jpg" alt="Industrial warehouse selective demo" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Commercial &middot; Warehouse</div><h4>Industrial Strip-Out</h4><p>Davie. Selective demo inside an active warehouse. Production never stopped.</p></div></div>
+      <div class="portfolio-card reveal"><div class="portfolio-thumb has-image"><img src="/img/job-637.jpg" alt="Slab and foundation removal" loading="lazy" /></div><div class="portfolio-card-body"><div class="meta">Concrete &middot; Foundation</div><h4>Slab &amp; Foundation</h4><p>Sunrise. Full residential slab removal, broken out and hauled in one day.</p></div></div>
     </div>
-    <div style="text-align: center; margin-top: 64px; color: var(--muted); font-size: 14px;">Portfolio thumbnails are placeholders. Replace with real before / after photos from project files.</div>
   </div>
 </section>
 ''' + CTA_BLOCK

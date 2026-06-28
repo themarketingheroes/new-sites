@@ -89,6 +89,28 @@ nav.top.scrolled { border-bottom: 1px solid var(--line); background: rgba(10, 10
     linear-gradient(180deg, transparent 40%, var(--bg) 100%);
   z-index: 0;
 }
+.hero.with-bg-image { background-size: cover; background-position: center; }
+.hero.with-bg-image::before {
+  background:
+    linear-gradient(110deg, rgba(10, 10, 10, 0.96) 0%, rgba(10, 10, 10, 0.85) 45%, rgba(10, 10, 10, 0.55) 100%),
+    linear-gradient(180deg, transparent 60%, var(--bg) 100%);
+}
+
+/* ============= VIDEO EMBED ============= */
+.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 900px) { .video-grid { grid-template-columns: 1fr; } }
+.video-wrap { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 20px; background: var(--surface); border: 1px solid var(--line); }
+.video-wrap iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.video-caption { color: var(--muted); font-size: 13px; padding: 14px 4px 0; line-height: 1.5; }
+.video-caption strong { color: var(--text); display: block; font-family: 'Space Grotesk'; font-size: 15px; font-weight: 600; margin-bottom: 4px; }
+
+/* ============= IMAGE TREATMENT ============= */
+.portfolio-thumb.has-image { background: none; padding: 0; }
+.portfolio-thumb.has-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.image-block.has-image { background: none; padding: 0; overflow: hidden; }
+.image-block.has-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.founder-image.has-image { background: none; }
+.founder-image.has-image img { width: 100%; height: 100%; object-fit: cover; display: block; position: relative; z-index: 0; }
 .hero-grid {
   position: absolute; inset: 0; z-index: 0; opacity: 0.4;
   background-image:

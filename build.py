@@ -137,7 +137,7 @@ def page(filename, title, desc, body, active_nav, canonical=None):
 # ============================================================
 # CTA BLOCK (reused across many pages)
 # ============================================================
-CTA_BLOCK = '''<section id="contact" class="cta-section">
+CTA_BLOCK = '''<section id="contact" class="cta-section with-bg" style="background-image: url('/img/job-616.jpg');">
   <div class="container">
     <div class="cta-grid">
       <div class="reveal">
@@ -245,7 +245,7 @@ home_body = '''<section class="hero hero-tall with-bg-image" style="background-i
   </div>
 </section>
 
-<section id="process" class="process-section">
+<section id="process" class="process-section with-bg" style="background-image: url('/img/job-638.jpg');">
   <div class="container">
     <div class="reveal">
       <span class="section-eyebrow">The Process</span>
@@ -337,7 +337,7 @@ home_body = '''<section class="hero hero-tall with-bg-image" style="background-i
   </div>
 </section>
 
-<div class="stats-strip">
+<div class="stats-strip with-bg" style="background-image: url('/img/job-640.jpg');">
   <div class="container">
     <div class="stats-grid">
       <div class="stat reveal"><div class="stat-number">38</div><div class="stat-label">Signed jobs</div></div>
@@ -410,7 +410,7 @@ page("index.html",
 # ============================================================
 # ABOUT
 # ============================================================
-about_body = '''<section class="page-header">
+about_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-625.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>About</span></div>
     <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Breaking barriers.<br><span style="color: var(--accent);">Building futures.</span></h1>
@@ -495,7 +495,7 @@ page("about.html",
 # ============================================================
 # SERVICES OVERVIEW
 # ============================================================
-services_body = '''<section class="page-header">
+services_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-630.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Services</span></div>
     <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Every demolition need.<br><span style="color: var(--accent);">One in-house crew.</span></h1>
@@ -595,7 +595,11 @@ page("services.html",
 # SERVICE PAGE BUILDER (reusable)
 # ============================================================
 def service_page(filename, page_title, hero_h1, hero_h1_accent, hero_sub,
-                 lead_h2, lead_p, bullets, side_image_caption, faqs=None, image_path=None, extra_html=""):
+                 lead_h2, lead_p, bullets, side_image_caption, faqs=None, image_path=None, extra_html="", hero_bg=None):
+    if not hero_bg:
+        # rotate based on filename hash so each service page gets a unique header bg
+        rotation = ['/img/job-620.jpg', '/img/job-630.jpg', '/img/job-637.jpg', '/img/job-645.jpg', '/img/job-631.jpg', '/img/job-646.jpg']
+        hero_bg = rotation[abs(hash(filename)) % len(rotation)]
     bullets_html = "\n".join([f'<li>{b}</li>' for b in bullets])
     faqs_html = ""
     if faqs:
@@ -610,7 +614,7 @@ def service_page(filename, page_title, hero_h1, hero_h1_accent, hero_sub,
   </div>
 </section>'''
 
-    body = f'''<section class="page-header">
+    body = f'''<section class="page-header with-bg" style="background-image: url('{hero_bg}');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><a href="/services.html">Services</a><span class="sep">/</span><span>{page_title}</span></div>
     <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">{hero_h1}<br><span style="color: var(--accent);">{hero_h1_accent}</span></h1>
@@ -842,7 +846,7 @@ service_page(
 # ============================================================
 # PORTFOLIO
 # ============================================================
-portfolio_body = '''<section class="page-header">
+portfolio_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-636.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Portfolio</span></div>
     <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Selected work<br><span style="color: var(--accent);">across South Florida.</span></h1>
@@ -875,7 +879,7 @@ page("portfolio.html",
 # ============================================================
 # REVIEWS
 # ============================================================
-reviews_body = '''<section class="page-header">
+reviews_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-619.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Reviews</span></div>
     <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">What clients<br><span style="color: var(--accent);">actually say.</span></h1>
@@ -975,7 +979,7 @@ page("reviews.html",
 # ============================================================
 # BLOG
 # ============================================================
-blog_body = '''<section class="page-header">
+blog_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-621.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Blog</span></div>
     <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Field notes from<br><span style="color: var(--accent);">South Florida demolition.</span></h1>
@@ -1006,7 +1010,7 @@ page("blog.html",
 # ============================================================
 # CONTACT
 # ============================================================
-contact_body = '''<section class="page-header">
+contact_body = '''<section class="page-header with-bg" style="background-image: url('/img/job-614.jpg');">
   <div class="container">
     <div class="crumb"><a href="/">Home</a><span class="sep">/</span><span>Contact</span></div>
     <h1 style="font-family:'Space Grotesk'; font-size: clamp(40px,5.5vw,72px); font-weight: 600; line-height: 1.05; letter-spacing: -0.03em; max-width: 900px;">Tell us about the job.<br><span style="color: var(--accent);">We will come walk it.</span></h1>

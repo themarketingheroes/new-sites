@@ -196,7 +196,14 @@ section { padding: 120px 0; position: relative; }
 .why-card p { color: var(--muted); font-size: 15px; line-height: 1.6; }
 
 /* ============= PROCESS ============= */
-.process-section { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.process-section { background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); position: relative; }
+.process-section.with-bg { background-size: cover; background-position: center; background-attachment: fixed; }
+.process-section.with-bg::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(180deg, rgba(10,10,10,0.94) 0%, rgba(10,10,10,0.88) 60%, rgba(10,10,10,0.94) 100%);
+}
+.process-section.with-bg .container { position: relative; z-index: 1; }
+@media (max-width: 900px) { .process-section.with-bg { background-attachment: scroll; } }
 .process-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-top: 64px; }
 @media (max-width: 900px) { .process-grid { grid-template-columns: 1fr 1fr; gap: 16px; } }
 @media (max-width: 500px) { .process-grid { grid-template-columns: 1fr; } }
@@ -252,7 +259,13 @@ section { padding: 120px 0; position: relative; }
 .founder-signature .sig-title { color: var(--muted); font-size: 13px; }
 
 /* ============= STATS STRIP ============= */
-.stats-strip { background: var(--accent); padding: 80px 0; }
+.stats-strip { background: var(--accent); padding: 80px 0; position: relative; overflow: hidden; }
+.stats-strip.with-bg { background-color: var(--bg); background-size: cover; background-position: center; }
+.stats-strip.with-bg::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(110deg, rgba(255,107,53,0.92) 0%, rgba(255,107,53,0.75) 60%, rgba(255,87,34,0.65) 100%);
+}
+.stats-strip.with-bg .container { position: relative; z-index: 1; }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
 @media (max-width: 768px) { .stats-grid { grid-template-columns: 1fr 1fr; gap: 40px 24px; } }
 .stat { text-align: left; color: white; }
@@ -276,7 +289,14 @@ section { padding: 120px 0; position: relative; }
 .testimonial-card .author strong { color: var(--text); display: block; margin-bottom: 2px; }
 
 /* ============= CTA ============= */
-.cta-section { background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%); border-top: 1px solid var(--line); }
+.cta-section { background: linear-gradient(135deg, var(--surface) 0%, var(--bg) 100%); border-top: 1px solid var(--line); position: relative; overflow: hidden; }
+.cta-section.with-bg { background-size: cover; background-position: center; background-attachment: fixed; }
+.cta-section.with-bg::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(115deg, rgba(10,10,10,0.96) 0%, rgba(10,10,10,0.82) 50%, rgba(10,10,10,0.92) 100%);
+}
+.cta-section.with-bg .container { position: relative; z-index: 1; }
+@media (max-width: 900px) { .cta-section.with-bg { background-attachment: scroll; } }
 .cta-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
 @media (max-width: 900px) { .cta-grid { grid-template-columns: 1fr; gap: 48px; } }
 .cta-form-card { background: var(--surface-2); border: 1px solid var(--line); border-radius: 24px; padding: 48px; }
@@ -297,6 +317,12 @@ section { padding: 120px 0; position: relative; }
 /* ============= PAGE HEADER (interior pages) ============= */
 .page-header { padding: 160px 0 80px; position: relative; overflow: hidden; }
 .page-header::before { content: ''; position: absolute; inset: 0; background: radial-gradient(circle at 30% 50%, var(--accent-soft) 0%, transparent 50%); }
+.page-header.with-bg { background-size: cover; background-position: center; }
+.page-header.with-bg::before {
+  background:
+    linear-gradient(110deg, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.78) 55%, rgba(10,10,10,0.55) 100%),
+    radial-gradient(circle at 30% 50%, var(--accent-soft) 0%, transparent 50%);
+}
 .page-header .container { position: relative; z-index: 1; }
 .crumb { display: inline-flex; gap: 10px; color: var(--muted); font-size: 13px; margin-bottom: 24px; }
 .crumb a { color: var(--muted); }
